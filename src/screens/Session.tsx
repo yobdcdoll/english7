@@ -99,7 +99,6 @@ export function Session({ state, setState, onExit }: Props) {
   }
 
   if (!current) {
-    const correctCount = answered.filter((item) => item.correct).length;
     return (
       <div className="screen session-screen">
         <main className="wrap-main">
@@ -110,9 +109,6 @@ export function Session({ state, setState, onExit }: Props) {
               ? `新学：${plan.newIds.map((id) => chunkById(id).chunk).join(' · ')}`
               : '今天只做回收，也很棒。'}
           </p>
-          {answered.length > 0 && (
-            <p className="muted">答对 {correctCount} / {answered.length}</p>
-          )}
           <div className="mood">
             <p>今天感觉怎么样？</p>
             <div className="mood-row">
