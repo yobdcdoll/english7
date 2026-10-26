@@ -1,0 +1,225 @@
+{
+  "chunks": [
+    {
+      "id": "look-at",
+      "chunk": "look at",
+      "glossZh": "看……",
+      "week": 1,
+      "textbook": "U10 Look at me",
+      "scenes": [
+        {
+          "id": "look-at-cat",
+          "emoji": "🐱",
+          "utterance": "Look at the cat.",
+          "audioId": "look-at-cat",
+          "promptZh": "指一指猫，说 Look at the cat。",
+          "cue": "point"
+        },
+        {
+          "id": "look-at-tree",
+          "emoji": "🌳",
+          "utterance": "Look at the tree.",
+          "audioId": "look-at-tree",
+          "promptZh": "指一指树，说 Look at the tree。",
+          "cue": "point"
+        },
+        {
+          "id": "look-at-star",
+          "emoji": "⭐",
+          "utterance": "Look at the star.",
+          "audioId": "look-at-star",
+          "promptZh": "指一指星星，说 Look at the star。",
+          "cue": "point"
+        }
+      ]
+    },
+    {
+      "id": "this-is",
+      "chunk": "this is",
+      "glossZh": "这是……",
+      "week": 1,
+      "textbook": "U10 / U8",
+      "scenes": [
+        {
+          "id": "this-is-apple",
+          "emoji": "🍎",
+          "utterance": "This is an apple.",
+          "audioId": "this-is-apple",
+          "promptZh": "拿起苹果或指近处，说 This is an apple。",
+          "cue": "near"
+        },
+        {
+          "id": "this-is-ball",
+          "emoji": "⚽",
+          "utterance": "This is a ball.",
+          "audioId": "this-is-ball",
+          "promptZh": "拿起球，说 This is a ball。",
+          "cue": "near"
+        },
+        {
+          "id": "this-is-card",
+          "emoji": "🃏",
+          "utterance": "This is a card.",
+          "audioId": "this-is-card",
+          "promptZh": "拿起卡片，说 This is a card。",
+          "cue": "near"
+        }
+      ]
+    },
+    {
+      "id": "that-is",
+      "chunk": "that is",
+      "glossZh": "那是……",
+      "week": 1,
+      "textbook": "拓展",
+      "scenes": [
+        {
+          "id": "that-is-moon",
+          "emoji": "🌙",
+          "utterance": "That is the moon.",
+          "audioId": "that-is-moon",
+          "promptZh": "指远处或窗外，说 That is the moon。",
+          "cue": "far"
+        },
+        {
+          "id": "that-is-bird",
+          "emoji": "🐦",
+          "utterance": "That is a bird.",
+          "audioId": "that-is-bird",
+          "promptZh": "指远处，说 That is a bird。",
+          "cue": "far"
+        },
+        {
+          "id": "that-is-bus",
+          "emoji": "🚌",
+          "utterance": "That is a bus.",
+          "audioId": "that-is-bus",
+          "promptZh": "指窗外，说 That is a bus。",
+          "cue": "far"
+        }
+      ]
+    }
+  ],
+  "baseline": {
+    "comprehension": [
+      {
+        "id": "bc1",
+        "utterance": "Look at the cat.",
+        "audioId": "base-look-cat",
+        "answer": "cat",
+        "level": 1,
+        "options": [
+          { "id": "cat", "emoji": "🐱" },
+          { "id": "dog", "emoji": "🐶" },
+          { "id": "ball", "emoji": "⚽" }
+        ]
+      },
+      {
+        "id": "bc2",
+        "utterance": "Look at the apple.",
+        "audioId": "base-look-apple",
+        "answer": "apple",
+        "level": 1,
+        "options": [
+          { "id": "apple", "emoji": "🍎" },
+          { "id": "banana", "emoji": "🍌" },
+          { "id": "ball", "emoji": "⚽" }
+        ]
+      },
+      {
+        "id": "bc3",
+        "utterance": "This is a ball.",
+        "audioId": "base-this-ball",
+        "answer": "ball",
+        "level": 2,
+        "options": [
+          { "id": "ball", "emoji": "⚽" },
+          { "id": "apple", "emoji": "🍎" },
+          { "id": "cat", "emoji": "🐱" }
+        ]
+      },
+      {
+        "id": "bc4",
+        "utterance": "That is the moon.",
+        "audioId": "base-that-moon",
+        "answer": "moon",
+        "level": 2,
+        "options": [
+          { "id": "moon", "emoji": "🌙" },
+          { "id": "sun", "emoji": "☀️" },
+          { "id": "star", "emoji": "⭐" }
+        ]
+      },
+      {
+        "id": "bc5",
+        "utterance": "Look at the tree.",
+        "audioId": "base-look-tree",
+        "answer": "tree",
+        "level": 2,
+        "options": [
+          { "id": "tree", "emoji": "🌳" },
+          { "id": "star", "emoji": "⭐" },
+          { "id": "moon", "emoji": "🌙" }
+        ]
+      },
+      {
+        "id": "bc6",
+        "utterance": "This is a bird.",
+        "audioId": "base-this-bird",
+        "answer": "bird",
+        "level": 3,
+        "options": [
+          { "id": "bird", "emoji": "🐦" },
+          { "id": "bus", "emoji": "🚌" },
+          { "id": "star", "emoji": "⭐" }
+        ]
+      },
+      {
+        "id": "bc7",
+        "utterance": "In the box.",
+        "audioId": "base-in-box",
+        "answer": "box",
+        "level": 3,
+        "options": [
+          { "id": "box", "emoji": "📦" },
+          { "id": "desk", "emoji": "🪑" },
+          { "id": "bed", "emoji": "🛏️" }
+        ]
+      },
+      {
+        "id": "bc8",
+        "utterance": "Give me the apple.",
+        "audioId": "base-give-apple",
+        "answer": "apple",
+        "level": 3,
+        "options": [
+          { "id": "apple", "emoji": "🍎" },
+          { "id": "ball", "emoji": "⚽" },
+          { "id": "cat", "emoji": "🐱" }
+        ]
+      }
+    ],
+    "decoding": [
+      { "id": "bd1", "display": "cat" },
+      { "id": "bd2", "display": "dog" },
+      { "id": "bd3", "display": "ball" },
+      { "id": "bd4", "display": "apple" },
+      { "id": "bd5", "display": "this" },
+      { "id": "bd6", "display": "that" },
+      { "id": "bd7", "display": "look at" },
+      { "id": "bd8", "display": "in the box" }
+    ],
+    "listening": [
+      { "id": "bl1", "utterance": "Look at the cat.", "audioId": "base-rep-look-cat" },
+      { "id": "bl2", "utterance": "This is an apple.", "audioId": "base-rep-this-apple" },
+      { "id": "bl3", "utterance": "That is a ball.", "audioId": "base-rep-that-ball" },
+      { "id": "bl4", "utterance": "Where's the dog?", "audioId": "base-rep-wheres-dog" }
+    ],
+    "production": [
+      { "id": "bp1", "emoji": "🐱", "utterance": "What's this?", "audioId": "base-whats-this" },
+      { "id": "bp2", "emoji": "🍎", "utterance": "What's this?", "audioId": "base-whats-this" },
+      { "id": "bp3", "emoji": "⚽", "utterance": "What's this?", "audioId": "base-whats-this" },
+      { "id": "bp4", "emoji": "🚌", "utterance": "What's this?", "audioId": "base-whats-this" }
+    ]
+  }
+}
