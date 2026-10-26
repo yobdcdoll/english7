@@ -61,6 +61,13 @@ export function ParentPanel({ state, setState, onBack }: Props) {
     }));
   }
 
+  function updateSpeechRate(value: number) {
+    setState((prev) => ({
+      ...prev,
+      settings: { ...prev.settings, speechRate: value },
+    }));
+  }
+
   function exportData() {
     const blob = new Blob([JSON.stringify(state, null, 2)], { type: 'application/json' });
     const url = URL.createObjectURL(blob);
@@ -268,6 +275,19 @@ export function ParentPanel({ state, setState, onBack }: Props) {
               >
                 <option value={2}>2 个</option>
                 <option value={3}>3 个</option>
+              </select>
+            </label>
+            <label className="field">
+              <span>语速</span>
+              <select
+                className="select-input"
+                value={state.settings.speechRate}
+                onChange={(event) => updateSpeechRate(Number(event.target.value))}
+              >
+                <option value={0.65}>很慢</option>
+                <option value={0.75}>慢（推荐）</option>
+                <option value={0.85}>标准</option>
+                <option value={1}>原速</option>
               </select>
             </label>
           </div>

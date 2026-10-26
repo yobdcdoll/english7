@@ -30,7 +30,11 @@ export default function App() {
         <Session state={state} setState={setState} onExit={() => setScreen('home')} />
       )}
       {screen === 'baseline' && (
-        <Baseline setState={setState} onExit={() => setScreen('home')} />
+        <Baseline
+          speechRate={state.settings.speechRate}
+          setState={setState}
+          onExit={() => setScreen('home')}
+        />
       )}
       {screen === 'parent' && (
         <ParentPanel state={state} setState={setState} onBack={() => setScreen('home')} />

@@ -25,6 +25,8 @@ export function Session({ state, setState, onExit }: Props) {
   const finished = useRef(false);
 
   const current = plan.items[index];
+  const rate = state.settings.speechRate;
+  const slowRate = Math.max(0.5, rate - 0.15);
 
   useEffect(() => {
     const timer = window.setInterval(() => setElapsed(Date.now() - startedAt), 1000);
@@ -36,10 +38,10 @@ export function Session({ state, setState, onExit }: Props) {
     setFeedback(null);
     setShowHint(false);
     const timer = window.setTimeout(() => {
-      void speak(current.scene.audioId, current.scene.utterance);
+      void speak(current.scene.audioId, current.scene.utterance, rate);
     }, 250);
     return () => window.clearTimeout(timer);
-  }, [current]);
+  }, [current, rate]);
 
   function choose(optionId: string) {
     if (!current || current.kind !== 'choice' || feedback) return;
@@ -59,7 +61,10 @@ export function Session({ state, setState, onExit }: Props) {
     }
 
     if (!correct) {
-      window.setTimeout(() => void speak(current.scene.audioId, current.scene.utterance), 350);
+      window.setTimeout(
+        () => void speak(current.scene.audioId, current.scene.utterance, slowRate),
+        350,
+      );
     }
   }
 
@@ -145,13 +150,22 @@ export function Session({ state, setState, onExit }: Props) {
           <>
             <div className="scene-emoji">{current.scene.emoji}</div>
             <p className="utterance">{current.scene.utterance}</p>
-            <button
-              className="speaker"
-              onClick={() => void speak(current.scene.audioId, current.scene.utterance)}
-              aria-label="再听一遍"
-            >
-              🔊
-            </button>
+            <div className="speaker-row">
+              <button
+                className="speaker"
+                onClick={() => void speak(current.scene.audioId, current.scene.utterance, rate)}
+                aria-label="再听一遍"
+              >
+                🔊
+              </button>
+              <button
+                className="speaker speaker-slow"
+                onClick={() => void speak(current.scene.audioId, current.scene.utterance, slowRate)}
+                aria-label="慢速再听"
+              >
+                🐢 慢
+              </button>
+            </div>
             <button className="hint-toggle" onClick={() => setShowHint((value) => !value)}>
               家长提示
             </button>
@@ -163,13 +177,22 @@ export function Session({ state, setState, onExit }: Props) {
         ) : (
           <>
             <p className="prompt">Listen. Choose.</p>
-            <button
-              className="speaker big-speaker"
-              onClick={() => void speak(current.scene.audioId, current.scene.utterance)}
-              aria-label="再听一遍"
-            >
-              🔊
-            </button>
+            <div className="speaker-row">
+              <button
+                className="speaker big-speaker"
+                onClick={() => void speak(current.scene.audioId, current.scene.utterance, rate)}
+                aria-label="再听一遍"
+              >
+                🔊
+              </button>
+              <button
+                className="speaker speaker-slow"
+                onClick={() => void speak(current.scene.audioId, current.scene.utterance, slowRate)}
+                aria-label="慢速再听"
+              >
+                🐢 慢
+              </button>
+            </div>
             <div className="options">
               {current.options.map((option) => {
                 const isCorrect = option.id === current.scene.id;

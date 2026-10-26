@@ -50,6 +50,8 @@ export type AppState = {
   settings: {
     newPerWeek: number;
     theme: 'default' | 'pokemon';
+    /** Speaking rate for TTS and audio playback. 1 = normal speed. */
+    speechRate: number;
   };
   cards: Record<string, CardProgress>;
   sessions: SessionRecord[];

@@ -25,11 +25,12 @@ function zero(): DimensionResult {
 }
 
 type Props = {
+  speechRate: number;
   setState: React.Dispatch<React.SetStateAction<AppState>>;
   onExit: () => void;
 };
 
-export function Baseline({ setState, onExit }: Props) {
+export function Baseline({ speechRate, setState, onExit }: Props) {
   const [phase, setPhase] = useState<'start' | 'item' | 'result'>('start');
   const [dimIndex, setDimIndex] = useState(0);
   const [itemIndex, setItemIndex] = useState(0);
@@ -54,10 +55,10 @@ export function Baseline({ setState, onExit }: Props) {
     };
     if (!item.audioId || !item.utterance) return;
     const timer = window.setTimeout(() => {
-      void speak(item.audioId as string, item.utterance as string);
+      void speak(item.audioId as string, item.utterance as string, speechRate);
     }, 300);
     return () => window.clearTimeout(timer);
-  }, [phase, dim, itemIndex]);
+  }, [phase, dim, itemIndex, speechRate]);
 
   function record(value: 'correct' | 'incorrect' | 'none') {
     if (recorded) return;
@@ -233,7 +234,7 @@ export function Baseline({ setState, onExit }: Props) {
             <>
               <button
                 className="speaker big-speaker"
-                onClick={() => void speak(item.audioId, item.utterance)}
+                onClick={() => void speak(item.audioId, item.utterance, speechRate)}
                 aria-label="再听一遍"
               >
                 🔊
@@ -264,7 +265,7 @@ export function Baseline({ setState, onExit }: Props) {
             <>
               <button
                 className="speaker big-speaker"
-                onClick={() => void speak(item.audioId, item.utterance)}
+                onClick={() => void speak(item.audioId, item.utterance, speechRate)}
                 aria-label="再听一遍"
               >
                 🔊
@@ -300,7 +301,7 @@ export function Baseline({ setState, onExit }: Props) {
               <div className="scene-emoji">{item.emoji}</div>
               <button
                 className="speaker"
-                onClick={() => void speak(item.audioId, item.utterance)}
+                onClick={() => void speak(item.audioId, item.utterance, speechRate)}
                 aria-label="再听一遍"
               >
                 🔊

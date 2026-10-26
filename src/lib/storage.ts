@@ -6,7 +6,7 @@ export function emptyState(): AppState {
   return {
     version: 1,
     childName: '',
-    settings: { newPerWeek: 3, theme: 'default' },
+    settings: { newPerWeek: 3, theme: 'default', speechRate: 0.75 },
     cards: {},
     sessions: [],
     baseline: null,

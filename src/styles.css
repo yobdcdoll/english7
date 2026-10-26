@@ -398,6 +398,21 @@ select:focus-visible {
   min-height: 72px;
 }
 
+.speaker-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.speaker-slow {
+  min-width: 92px;
+  min-height: 56px;
+  font-size: 18px;
+  color: var(--muted);
+  letter-spacing: 0.02em;
+}
+
 .hint-toggle {
   min-height: 56px;
   padding: 0 12px;
